@@ -6,7 +6,7 @@ from django.db import models
 class CustomUserManager(BaseUserManager):
     def create_user(self, email, name, surname, password=None):
         if not email:
-            raise ValueError('Email adresi kiritilishi shart')
+            raise ValueError('Email address must be enter')
 
         email = self.normalize_email(email)
         user = self.model(email=email, name=name, surname=surname)
