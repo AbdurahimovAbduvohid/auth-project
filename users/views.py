@@ -31,8 +31,5 @@ class UserDetailView(generics.RetrieveAPIView):
 class UserListView(generics.ListAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
-    def get(self, request):
-        users = CustomUser.objects.all()
-        return render(request, 'users/user_list.html', {'users': users})

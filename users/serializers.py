@@ -7,7 +7,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('id', 'email', 'name', 'surname')
+        fields = ('id', 'email', 'name', 'surname')  # jsonga o'tkazilmoqda
 
 
 class RegisterSerializer(serializers.ModelSerializer):
