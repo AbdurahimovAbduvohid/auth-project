@@ -3,7 +3,6 @@ from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from .models import CustomUser
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer
-from django.shortcuts import render
 
 
 class RegisterView(generics.CreateAPIView):
@@ -32,4 +31,3 @@ class UserListView(generics.ListAPIView):
     queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
-
